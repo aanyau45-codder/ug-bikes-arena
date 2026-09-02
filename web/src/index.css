@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/*
+  Typography design tokens.
+  These three variables are the single source of truth for fonts across the
+  entire app (Font Lab + all four concepts). They are read by Tailwind's
+  `font-heading` / `font-body` / `font-accent` utilities below, and are
+  overwritten at runtime (instantly, no reload) by TypographyContext when a
+  visitor picks fonts on /fonts. Never hardcode a font-family in a component —
+  always use the `font-heading` / `font-body` / `font-accent` utility classes.
+*/
+@theme {
+  --font-heading: "Saira Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "Rajdhani", "Helvetica Neue", Arial, sans-serif;
+
+  /* Shared brand marks used across concepts (each concept may layer its own
+     accents on top of this, but red + near-black stay the constant thread). */
+  --color-brand-red: #e0122a;
+  --color-brand-red-dark: #a30d1f;
+  --color-brand-ink: #0a0a0a;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Utility: visually-hidden but accessible (skip links, sr-only labels) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
