@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- GitHub Pages SPA fallback: decode the path 404.html redirected here as
+         a query string, back into a real history entry, before the router
+         mounts. Demo-hosting shim only — Cloudflare Pages doesn't need this,
+         it uses public/_redirects instead. -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/ug-bikes-arena/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UG Bikes Arena — internal design prototype: typography lab and homepage design concepts."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>UG Bikes Arena — Design Prototype</title>
+    <script type="module" crossorigin src="/ug-bikes-arena/assets/index-1kmai83l.js"></script>
+    <link rel="stylesheet" crossorigin href="/ug-bikes-arena/assets/index-CO9TUJGK.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
